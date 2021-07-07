@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;400&display=swap");
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Josefin Sans", sans-serif;
+      }
+      .btns {
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+      }
+      button {
+        padding: 5px 10px;
+        background-color: rgb(130, 16, 236);
+        outline: none;
+        border-color: black;
+        border-style: solid;
+        margin: 5px;
+        border-radius: 2px;
+        color: whitesmoke;
+        width: 100px;
+      }
+      button:hover{
+        background-color: rgb(128, 91, 163);
+        cursor: pointer;
+      }
+      #root {
+        border: 2px solid black;
+        margin: 10px;
+        height: 85vh;
+        padding: 20px 100px;
+        line-height: 32px;
+        background-color: #1d1717;
+        color: whitesmoke;
+        transition: all 1s;
+        overflow: scroll;
+        word-wrap: break-word;
+        border-radius: 4px;
+      }
+      #root::-webkit-scrollbar {
+        display: none;
+      }
+      #root > h1 {
+        margin-top: 10px;
+        margin-bottom: 20px;
+        color: rgb(130, 16, 236);
+      }
+      #root > p {
+        text-align: justify;
+      }
+      input {
+        padding: 5px 10px;
+        width: 70vw;
+        outline: none;
+        border: 1px solid black;
+        font-size: 1.07rem;
+      }
+      input:valid {
+        background-color: rgb(166, 238, 23);
+      }
+      input:invalid {
+        background-color: tomato;
+      }
+      input::placeholder {
+        color: rgba(0, 0, 0, 0.63);
+      }
+      #inputs {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        height: 100%;
+        align-items: center;
+        gap: 1rem;
+      }
+      textarea {
+        width: 70vw;
+        resize: none;
+        padding: 5px 10px;
+        outline: none;
+        border: 1px solid black;
+        font-size: 1.07rem;
+      }
+      img{
+        height: 30px;
+        transition: transform 0.5s;
+        cursor: pointer;
+        margin: 2px;
+      }
+      img:hover{
+        transform: scale(1.1);
+      }
+      #imgs{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 25px;
+      }
+      @media (max-width: 700px) {
+        #root {
+          padding: 10px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="btns">
+      <button id="home">Home</button>
+      <button id="about">Contact Me</button>
+      <button id="alert">Alert</button>
+    </div>
+    <div id="root">
+      <h1></h1>
+      <p></p>
+      <div id="imgs">
+        <h2>Follow me on</h2>
+        <div>
+          <img src="facebook.png" alt="Facebook">
+          <img src="whatsapp.png" alt="Whatsapp">
+          <img src="youtube.png" alt="Youtube">
+          <img src="instagram.png" alt="Instagram">
+        </div>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        let root = document.getElementById("root");
+        let heading = document.getElementsByTagName("h1");
+        let para = document.getElementsByTagName("p");
+        let home = document.getElementById("home");
+        let about = document.getElementById("about");
+        let galert = document.getElementById("alert");
+        setTimeout(() => {
+          heading[0].innerHTML = "Welcome !";
+          para[0].innerText =
+            "Hello there, my name is Sagar . I am a Geek and a intermediate front-end web developer, I know Html, Css,JavaScript. Currently, I am learning React Js which is developed by Facebook. I do know some Php and MYSQL. I want to become a full stack web developer and also a ethical hacker. I also have interests in Android Development. I also want to learn Data Structures and Algorithms to crack a good placement and live my life independtly.";
+        }, 0);
+
+        home.addEventListener("click", () => {
+          heading[0].innerHTML = "Welcome !";
+          para[0].innerText =
+            "Hello there, my name is Sagar . I am a Geek and a intermediate front-end web developer, I know Html, Css,JavaScript. Currently, I am learning React Js which is developed by Facebook. I do know some Php and MYSQL. I want to become a full stack web developer and also a ethical hacker. I also have interests in Android Development. I also want to learn Data Structures and Algorithms to crack a good placement and live my life independtly.";
+        });
+        about.addEventListener("click", () => {
+          heading[0].innerText = "Contact Me";
+          para[0].innerHTML = `<div id="inputs">
+          <input type="email" id="email" placeholder="E-mail">
+          <input type="tel" id="phone" placeholder="Mobile Number">
+          <textarea name="" id="" cols="3" rows="8" 
+          placeholder = "Enter your message" spellcheck ="false"></textarea>
+          <button>Submit</button>
+      </div><br><hr>`;
+        });
+
+        galert.addEventListener("click", () => {
+          alert("Thanks for visiting my website. 😘");
+        });
+      });
+    </script>
+  </body>
+</html>
